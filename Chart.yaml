@@ -1,0 +1,7 @@
+description: interface to send events to argos
+maintainers:
+- email: peter.hoppe@bertelsmann.de
+  name: Peter Hoppe
+name: argosinterface
+version: 0.0.4
+icon: https://argos.ws.arvato-systems.de/cs-nti-gui/javax.faces.resource/images/favicon.ico.xhtml

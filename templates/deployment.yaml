@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: argos
+    component: argoscomponent
+  name: argosinterface
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: argos
+        component: argoscomponent
+    spec:
+      containers:
+      - name: argos
+        image: "{{ .Values.argos.image }}"
+        ports:
+          - containerPort: 9094
+        env:
+        - name: ARGOS_URL
+          value: "{{ .Values.argos.url }}"
+        - name: ARGOS_API_KEY
+          value: "{{ .Values.argos.key }}"
+        - name: ARGOS_COMPONENT
+          value: "{{ .Values.argos.component }}"
+        - name: ARGOS_CLUSTER
+          value: "{{ .Values.argos.cluster }}"
+        - name: ARGOS_ACTIVE_WARNING
+          value: "{{ .Values.argos.active_warning }}"
+      {{- if .Values.argos.imagePullSecrets }}
+      imagePullSecrets:
+        - name: {{ .Values.argos.imagePullSecrets }}
+      {{- end }}

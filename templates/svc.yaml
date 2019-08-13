@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "80"
+  labels:
+    app: argos
+    component: argoscomponent
+  name: argosinterface
+spec:
+  ports:
+    - name: http
+      port: {{ .Values.argos.Port }}
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: argos
+    component: argoscomponent
