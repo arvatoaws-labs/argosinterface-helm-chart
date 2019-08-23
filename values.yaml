@@ -1,9 +1,6 @@
 #### in the customer values file
 argos:
-  # PROD
-  # url: "https://argos-eye-ext01.ws.arvato-systems.de/api/setEventData/EventData"
-  # TEST
-  url: "https://test-argos-eye-ext01.ws.arvato-systems.de/api/setEventData/EventData"
+  url: "<URL>"
 
   key: "<ARGOS-API-KEY>"
   component: "<COMPONENTID>"
@@ -19,13 +16,11 @@ argos:
 
   ## Image pull secret
   ##
-  # imagePullSecrets: asy-nexus-registry
+  # imagePullSecrets: 
 
   ## Argos Docker image
   ##
-  image: nexus.ws.arvato-systems.de:12002/argosinterface:latest
-    #"arvatoaws.azurecr.io/argosinterface:latest"
-    #"001579709704.dkr.ecr.eu-central-1.amazonaws.com/argosinterface:latest"
+  image: "<Image-URL>"
 
   nodeSelector: {}
 
