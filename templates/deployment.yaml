@@ -28,7 +28,9 @@ spec:
         - name: ARGOS_CLUSTER
           value: "{{ .Values.argos.cluster }}"
         - name: ARGOS_ACTIVE_WARNING
-          value: "{{ .Values.argos.active_warning }}"
+          value: "{{ .Values.argos.active_warning }}"        
+        - name: ARGOS_ACTIVE_ONLY_MINOR
+          value: "{{ .Values.argos.active_only_minor }}"
       {{- if .Values.argos.imagePullSecrets }}
       imagePullSecrets:
         - name: {{ .Values.argos.imagePullSecrets }}
